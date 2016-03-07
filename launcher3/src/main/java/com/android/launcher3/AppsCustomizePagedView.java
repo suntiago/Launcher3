@@ -376,6 +376,13 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
         }
     }
 
+    /**
+     * 获取系统小部件
+     *
+     * @aram a
+     * @return
+     * @throws
+     */
     public void onPackagesUpdated(ArrayList<Object> widgetsAndShortcuts) {
         LauncherAppState app = LauncherAppState.getInstance();
         DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
@@ -388,6 +395,7 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
                 if (!app.shouldShowAppOrWidgetProvider(widget.provider)) {
                     continue;
                 }
+                Log.d(TAG, "widget:"+widget.toString());
                 if (widget.minWidth > 0 && widget.minHeight > 0) {
                     // Ensure that all widgets we show can be added on a workspace of this size
                     int[] spanXY = Launcher.getSpanForWidget(mLauncher, widget);
@@ -1100,6 +1108,7 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
     }
 
     public void syncWidgetPageItems(final int page, final boolean immediate) {
+        Log.d(TAG, "syncWidgetPageItems page:"+page+" immediate："+immediate);
         int numItemsPerPage = mWidgetCountX * mWidgetCountY;
 
         final PagedViewGridLayout layout = (PagedViewGridLayout) getPageAt(page);

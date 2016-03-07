@@ -1703,6 +1703,12 @@ public class LauncherModel extends BroadcastReceiver
             }
         }
 
+        /**
+         * 当allap为ture，在workspace显示所有app
+         *
+         * @return
+         * @throws
+         */
         private void verifyApplications() {
             final Context context = mApp.getContext();
 

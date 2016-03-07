@@ -187,7 +187,6 @@ public class Hotseat extends FrameLayout {
             Launcher launcher, Workspace workspace) {
         if (LauncherAppState.isDisableAllApps()) {
             FolderInfo fi = new FolderInfo();
-
             fi.cellX = getCellXFromOrder(mAllAppsButtonRank);
             fi.cellY = getCellYFromOrder(mAllAppsButtonRank);
             fi.spanX = 1;
